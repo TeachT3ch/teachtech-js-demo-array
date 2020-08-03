@@ -85,3 +85,100 @@ function mediaTemperatura(temperatura){
 }
 let temperaturaSantiago = [9,11,15,17,20,20,23,25,21,16,12,10];
 console.log(mediaTemperatura(temperaturaSantiago));
+
+
+/*
+=========================================
+====== MÉTODOS PROPIOS DE ARRAYS ========
+=========================================
+*/
+
+// Añadir un elemento al final del array: push
+let ingredientesPasta = ["macarrones", "tomate"];
+
+let numeroIngredientes = ingredientesPasta.push("chorizo"); // devuelve la nueva longitud de la lista!
+console.log("Número de ingredientes: " + numeroIngredientes);
+console.log(ingredientesPasta);
+
+// Quitar un elemento del final del array: pop
+let ingredientesTortilla = ["patata", "huevo", "aceite", "sal", "cebolla"];
+
+let ultimoIngrediente = ingredientesTortilla.pop();
+console.log(ultimoIngrediente);
+console.log(ingredientesTortilla);
+
+// Añadir un elemento al principio del array: unshift
+let artistasFavoritos = ["Bon Jovi", "Madonna", "Pablo Alborán"];
+
+let numeroArtistasFavoritos = artistasFavoritos.unshift("Dua Lipa"); // devuelve la nueva longitud de la lista!
+console.log("Tengo " + numeroArtistasFavoritos + " artistas favoritos: " + artistasFavoritos);
+
+// Quitar un elemento del principio del array: shift
+let primerFavorito = artistasFavoritos.shift()
+console.log("Mi artista favorito es: " + primerFavorito);
+console.log(artistasFavoritos);
+
+// Quitar un elemento segun su indice: splice
+let ingredientesTortilla = ["patata", "huevo", "aceite", "sal", "cebolla"];
+
+let indiceAEliminar = 3;
+let ingredienteEliminado = ingredientesTortilla.splice(indiceAEliminar, 1);
+console.log(ingredientesTortilla);
+
+// Todos estos métodos actuan "in place", es decir, modifican el array original
+// Hacer una copia de un array: slice
+let copiaIngredientes = ingredientesTortilla.slice();
+
+// ¿por qué es esto necesario?
+let first = [1,2,3]
+let second = first;
+console.log(first + "\n" + second)
+
+first.pop()
+console.log(first + "\n" + second)
+
+// sin embargo...
+let first = [1,2,3]
+let second = first.slice();
+console.log(first + "\n" + second)
+
+first.pop()
+console.log(first + "\n" + second)
+
+// Encontrar el índice de un elemento del array: indexOf
+let artistasFavoritos = ["Bon Jovi", "Madonna", "Pablo Alborán"];
+let indiceBonJovi = artistasFavoritos.indexOf("Bon Jovi");
+console.log("Bon Jovi es mi artista favorito número " + indiceBonJovi);
+
+let indiceNoExiste = artistasFavoritos.indexOf("Metallica");
+console.log(indiceNoExiste); // si no existe el elemento, devuelve un -1
+
+// Saber si un elemento forma parte de un array: includes
+let esArtistaFavorito = artistasFavoritos.includes("Madonna");
+console.log(esArtistaFavorito);
+
+console.log(artistasFavoritos.includes("David Bisbal"));
+
+// Unir todos los elementos de un array en un string: join
+let paginaWeb = ["www", "teacht3ch", "com"];
+console.log(paginaWeb.join("."));
+
+// tambien es posible hacerlo con arrays de arrays
+let profesPorClase = [
+    ["Oscar", "JM"],     //0
+    ["Adri", "Nacho"],   //1
+    ["Nacho", "Rodri"],  //2
+    ["Juanlu", "Rodri"], //3
+    ["Adri", "Teffa"],   //4
+    ["Teffa", "Juanlu"]  //5
+];
+
+console.log(profesPorClase);
+console.log(profesPorClase.join('\n'))
+
+/* [Avanzado] iterar sobre cada uno de los elementos de un array: forEach
+* Este método se queda para los más valientes :)
+* Recordad que podéis encontrar la documentación de JavaScript y ejemplos en:
+* https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array
+*/
+
