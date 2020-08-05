@@ -75,16 +75,26 @@ for(let i=0; i<profesPorClase.length; i++){
 =======================================
 */
 
-//Ejemplo: función para calcular la temperatura media de una ciudad
-function mediaTemperatura(temperatura){
-    let temperaturaMedia = 0;
-    for(let i=0; i<temperatura.length; i++){
-        temperaturaMedia = temperaturaMedia + temperatura[i];
+//Ejemplo: función que nos dice qué profe tiene el nombre más largo
+
+function nombreMasLargo(profes){
+    let longitudMaxima = 0;
+    let posicionReferencia = -1;
+    for(let posicion = 0; posicion<profes.length; posicion++){
+        let longitudProfe = profes[posicion].length;
+        if(longitudProfe > longitudMaxima){
+            longitudMaxima = longitudProfe;
+            posicionReferencia = posicion;
+        }
     }
-    return temperaturaMedia / temperatura.length;
+    return profes[posicionReferencia];
 }
-let temperaturaSantiago = [9,11,15,17,20,20,23,25,21,16,12,10];
-console.log(mediaTemperatura(temperaturaSantiago));
+
+
+let profesTeachTech = ["Oscar", "JM", "Dani", "Diego", "Juan", 
+"Rodri", "Tefa", "Nadine", "Juanlu", "Adri", "Nacho", "Luis"];
+let nombreProfe = nombreMasLargo(profesTeachTech);
+console.log(nombreProfe);
 
 
 /*
